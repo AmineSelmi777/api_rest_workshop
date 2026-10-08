@@ -14,7 +14,7 @@ app.use(express.json());
 app.get("/api/health", (req, res) => res.json({ status: "ok" })); 
   
 app.use("/api/patients", require("./routes/patientRoutes")); 
-  
+app.use("/api/consultations", require("./routes/consultationRoutes"));
 // Route inconnue -> 404 en JSON 
 app.use((req, res) => res.status(404).json({ message: "Route introuvable" })); 
   
